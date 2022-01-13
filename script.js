@@ -14,14 +14,26 @@ viewer = new PANOLENS.Viewer({ container: container });
 //     console.log(infospot);
 // }, 1000);
 // container.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
-var aset = setInterval(() => {
-    if(viewer.DeviceOrientationControls.enabled){
-        console.log("mobile");
-        DeviceMotionEvent.requestPermission();
-        clearInterval(aset);
+// var aset = setInterval(() => {
+//     if(viewer.DeviceOrientationControls.enabled){
+//         console.log("mobile");
+//         DeviceMotionEvent.requestPermission();
+//         clearInterval(aset);
+//     }
+// }, 500);
+if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    document.body.addEventListener('click', function () {
+    DeviceOrientationEvent.requestPermission()
+    .then(function() {
+    console.log('DeviceOrientationEvent, DeviceMotionEvent enabled');
+    alert('DeviceOrientationEvent, DeviceMotionEvent enabled');
+    })
+    .catch(function (error) {
+    console.warn('DeviceOrientationEvent, DeviceMotionEvent not enabled', error);
+    alert('DeviceOrientationEvent, DeviceMotionEvent not enabled', error);
+    })
+    });
     }
-}, 500);
-
 viewer.add(panorama);
 viewer.addUpdateCallback(function () {
 
