@@ -13,7 +13,15 @@ viewer = new PANOLENS.Viewer({ container: container });
 // setInterval(() => {
 //     console.log(infospot);
 // }, 1000);
-container.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
+// container.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
+var aset = setInterval(() => {
+    if(viewer.DeviceOrientationControls.enabled){
+        console.log("mobile");
+        DeviceMotionEvent.requestPermission();
+        clearInterval(aset);
+    }
+}, 500);
+
 viewer.add(panorama);
 viewer.addUpdateCallback(function () {
 
