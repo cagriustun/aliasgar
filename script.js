@@ -5,7 +5,10 @@ var PanoViewer = eg.view360.PanoViewer;
 var container = document.getElementById("myPanoViewer");
 var panoViewer = new PanoViewer(container, {
   image: "b.png",
-  projectionType: "equirectangular" });
+        yawRange: [-135, 135], 
+        pitchRange: [-35, 35], 
+        fovRange: [30, 70] 
+       });
 
 
 var panoviewerSet = document.getElementById("panoSet");
