@@ -4,7 +4,7 @@
 var PanoViewer = eg.view360.PanoViewer;
 var container = document.getElementById("myPanoViewer");
 var panoViewer = new PanoViewer(container, {
-  image: "a.jpg",
+  image: "b.png",
   projectionType: "equirectangular" });
 
 
