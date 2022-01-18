@@ -20,7 +20,20 @@
   <body>
     <div class="panoviewer-container viewer">
       <div id="panoSet">
-        <div class="panoviewer container" id="myPanoViewer"></div>
+        <div class="panoviewer container" id="myPanoViewer">
+          <div class="viewer" data-page="1">
+            <div class="container"></div>
+            <div class="layer" onclick="closeLayer(event);">
+                <img src="https://naver.github.io/egjs-view360/examples/panoviewer/etc/img/book1.jpg">
+            </div>
+            <div class="hotspot search" data-page="1" data-anchor-index="0" data-yaw="77" data-pitch="6" onclick="openLayer('img/asgar.jpg')"></div>
+            <!-- <div class="hotspot search" data-page="1" data-anchor-index="1" data-yaw="-45" data-pitch="-18" onclick="openLayer('img/book1.jpg')"></div>
+            <div class="hotspot search" data-page="1" data-anchor-index="2" data-yaw="6" data-pitch="-17" onclick="openLayer('img/book1.jpg')"></div>
+            <div class="hotspot search" data-page="2" data-anchor-index="0" data-yaw="-60" data-pitch="-23" onclick="openLayer('img/book1.jpg')"></div> -->
+        </div>
+
+
+        </div>
       </div>
     </div>
     <script src="https://naver.github.io/egjs-view360/common/js/jquery-2.2.4.js"></script>
