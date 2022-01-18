@@ -82,51 +82,15 @@ function setHotspotOffsets(viewer) {
         setHotspotOffset(hotspot, viewer);
     });
 }
-function load(target, page) {
-    if (currentPage == page) {
-        return;
-    }
-    var yaw = target.getAttribute("data-yaw");
-    var pitch = target.getAttribute("data-pitch");
-
-    currentPage = "" + page;
-
-    viewer.lookAt({
-        yaw: yaw,
-        pitch: pitch,
-        fov: 30
-    }, 500);
-
-    setTimeout(function () {
-        panoviewer.setAttribute("data-page", currentPage);
-        viewer.setImage("aa.jpg", {
-            projectionType: eg.view360.PanoViewer.PROJECTION_TYPE.CUBEMAP,
-            cubemapConfig: {
-                tileConfig: { flipHorizontal: true, rotation: 0 },
-            }
-        });
-    }, 500);
-}
 
 
 
 var viewer = new eg.view360.PanoViewer(container, {
     image: "aa.png",
-    useZoom: false,
+    useZoom: true,
     yawRange: [-135, 135],
     pitchRange: [-35, 35],
     fovRange: [30, 70]
-}).on("ready", function (e) {
-    viewer.lookAt({
-        fov: 80,
-    });
-
-    setTimeout(function () {
-        viewer.lookAt({
-            fov: 65,
-        }, 500);
-        setHotspotOffsets(viewer);
-    });
 }).on("viewChange", function (e) {
     setHotspotOffsets(viewer);
 }).on("error", function (e) {
