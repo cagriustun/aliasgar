@@ -7,32 +7,39 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"
     />
-    <link
-      rel="stylesheet"
-      href="css/demo.css"
-    />
-    <link
-      rel="stylesheet"
-      href="css/PanoControls.css"
-    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.js"
+      integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/PanoControls.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="loading"></div>
     <div class="panoviewer-container viewer">
       <div id="panoSet">
         <div class="panoviewer container" id="myPanoViewer">
           <div class="viewer" data-page="1">
             <div class="container"></div>
             <div class="layer" onclick="closeLayer(event);">
-                <img src="https://naver.github.io/egjs-view360/examples/panoviewer/etc/img/book1.jpg">
+              <img
+                src="https://naver.github.io/egjs-view360/examples/panoviewer/etc/img/book1.jpg"
+              />
             </div>
-            <div class="hotspot search" data-page="1" data-anchor-index="0" data-yaw="77" data-pitch="6" onclick="openLayer('img/asgar.jpg')"></div>
+            <div
+              class="hotspot search"
+              data-page="1"
+              data-anchor-index="0"
+              data-yaw="77"
+              data-pitch="6"
+              onclick="openLayer('img/asgar.jpg')"
+            ></div>
             <!-- <div class="hotspot search" data-page="1" data-anchor-index="1" data-yaw="-45" data-pitch="-18" onclick="openLayer('img/book1.jpg')"></div>
             <div class="hotspot search" data-page="1" data-anchor-index="2" data-yaw="6" data-pitch="-17" onclick="openLayer('img/book1.jpg')"></div>
             <div class="hotspot search" data-page="2" data-anchor-index="0" data-yaw="-60" data-pitch="-23" onclick="openLayer('img/book1.jpg')"></div> -->
-        </div>
-
-
+          </div>
         </div>
       </div>
     </div>
@@ -47,5 +54,15 @@
     <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@2.0.1/build/webxr-polyfill.min.js"></script>
     <script src="https://naver.github.io/egjs-view360/common/js/initXR.js"></script>
     <script src="./script.js"></script>
+    <script>
+      function hideLoader() {
+        $("#loading").hide();
+      }
+
+      $(window).ready(hideLoader);
+
+      // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+      setTimeout(hideLoader, 20 * 1000);
+    </script>
   </body>
 </html>

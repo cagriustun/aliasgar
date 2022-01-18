@@ -29,7 +29,7 @@
   position: absolute;
   content: "";
   width: 30px;
-  height:40px;
+  height: 40px;
   left: 0;
   right: 0;
   top: 0;
@@ -53,7 +53,8 @@
   z-index: -2;
   box-sizing: border-box;
 }
-.rotate:before, .rotate:after {
+.rotate:before,
+.rotate:after {
   position: absolute;
   content: "";
   border-top: 7px solid transparent;
@@ -71,15 +72,8 @@
   transform: rotate(-10deg);
 }
 
-
-
-
-
-
-
-
 .icon {
-  background: #70B5E0;
+  background: #70b5e0;
   border-radius: 50%;
   box-shadow: inset -15px -15px 0px 0px rgba(0, 0, 0, 0.1);
 }
@@ -97,7 +91,7 @@
   position: absolute;
   width: 20px;
   height: 13px;
-  background: #F2DDAA;
+  background: #f2ddaa;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -180,28 +174,28 @@
 
 @keyframes anchor {
   0% {
-      opacity: 0;
-      margin-top: -20px;
+    opacity: 0;
+    margin-top: -20px;
   }
 
   10% {
-      opacity: 1;
-      margin-top: 0px;
+    opacity: 1;
+    margin-top: 0px;
   }
 
   85% {
-      opacity: 1;
-      margin-top: 0px;
+    opacity: 1;
+    margin-top: 0px;
   }
 
   91% {
-      opacity: 0;
-      margin-top: -20px;
+    opacity: 0;
+    margin-top: -20px;
   }
 
   100% {
-      opacity: 0;
-      margin-top: -20px;
+    opacity: 0;
+    margin-top: -20px;
   }
 }
 .hotspot {
@@ -271,7 +265,16 @@
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  bottom: 120px;
   margin: auto;
 }
-  
+
+#loading {
+  background: url('load.gif') no-repeat center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+}
